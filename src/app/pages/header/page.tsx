@@ -69,7 +69,7 @@ export default function Header() {
                 />
               </svg>
             </button>
-            <Link href="/contact">
+            <Link href="/pages/contact">
               <button
                 className="bg-[#7C4EE4] text-white py-2 px-4 rounded-md hover:bg-opacity-90 transition duration-300"
               >

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* Home */
+
+
+
+
+/* Heade  */
+
+
+
+/* Start Post   */
+
+/* .post_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.post_head h1 {
+  font-size: 24px;
+}
+
+.post_head button {
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.post_head button:hover {
+  background-color: #0056b3;
+} */
+
+
+/* End Post  */

@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-black py-8">
+    <footer className="bg-white text-black py-9 my-9">
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Navigation Links */}
         <div className="mb-4">

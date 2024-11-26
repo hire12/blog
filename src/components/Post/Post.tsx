@@ -10,11 +10,11 @@ export default function Post() {
       <div className="blog_row">
         <section className=" py-8">
           {/* Header Section */}
-          <div className="post_head flex justify-between items-center p-6 rounded-lg">
-            <h1 className="text-3xl font-extrabold text-gray-800 tracking-wide">Popular Post</h1>
-            <button className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
-              Explore All
-            </button>
+          <div className="text-center pt-5 mb-12">          
+            <h1 className="text-4xl font-semibold text-gray-900 mb-6">Popular Articles</h1>
+            <p className="mx-auto mb-8 max-w-2xl font-light text-gray-700 md:mb-12 sm:text-xl">
+              Stay up to date with the roadmap progress
+            </p>
           </div>
 
           <div className="mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -65,6 +65,11 @@ export default function Post() {
                   </article>
                 ))}
             </div>
+          </div>
+          <div className='text-center py-3'>
+          <button className="text-center px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+              Explore All
+            </button>
           </div>
         </section>
       </div>

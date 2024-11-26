@@ -8,9 +8,9 @@ export default function page() {
   return (
     <div>
       <Header />
+      <YouTubePage />
       <Subscribe />
       <Footer />
-      <YouTubePage />
     </div>
   )
 }

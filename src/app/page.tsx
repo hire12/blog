@@ -4,7 +4,7 @@ import Header from "./pages/header/page";
 import HomeSection from "./pages/Home/home";
 import Latest from "@/components/Latest/Latest";
 import Subscribe from "@/components/Subscribe/Subscribe";
-
+import './globals.css'
 
 export default function Home() {
   return (

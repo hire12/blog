@@ -8,7 +8,7 @@ export default function Blog() {
   return (
     <div className="blog_container">
       <div className="blog_row">
-        <section className="bg-white py-8">
+        <section className=" py-8">
           {/* Header Section */}
           <div className="text-center mb-12">
             <h5 className="mb-4 tracking-tight font-extrabold text-black dark:text-black">

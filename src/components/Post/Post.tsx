@@ -8,7 +8,7 @@ export default function Post() {
   return (
     <div className="blog_container">
       <div className="blog_row">
-        <section className="bg-white py-8">
+        <section className=" py-8">
           {/* Header Section */}
           <div className="post_head flex justify-between items-center p-6 rounded-lg">
             <h1 className="text-3xl font-extrabold text-gray-800 tracking-wide">Popular Post</h1>
@@ -36,7 +36,7 @@ export default function Post() {
                     {/* Article Details */}
                     <div className="flex justify-between items-center mb-5 text-gray-500">
                       <span
-                        className={`text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded ${article.color}`}
+                        className={`${article.color} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded `}
                       >
                         {article.category}
                       </span>

@@ -6,7 +6,7 @@ export default function Latest() {
   return (
     <div className="blog_container">
       <div className="blog_row">
-        <section className="bg-white py-8">
+        <section className=" py-8">
           {/* Header Section */}
           <div className="post_head flex justify-between items-center px-7 p-3 rounded-lg">
             <h1 className="text-3xl font-extrabold text-gray-800 tracking-wide font-raleway">Latest Articles</h1>

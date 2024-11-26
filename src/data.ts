@@ -9,7 +9,7 @@ export const articles = [
       category: "Design",
       color: "bg-purple-500 text-blue-800",
       author: {
-        name: "Fatima Khalid",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "5 days ago",
@@ -23,7 +23,7 @@ export const articles = [
       category: "JavaScript",
       color: "bg-green-100 text-green-800",
       author: {
-        name: "Alex Johnson",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "10 days ago",
@@ -37,7 +37,7 @@ export const articles = [
       category: "React",
       color: "bg-blue-100 text-blue-800",
       author: {
-        name: "Maria Chen",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "7 days ago",
@@ -51,7 +51,7 @@ export const articles = [
       category: "Full-Stack",
       color: "bg-red-100 text-red-800",
       author: {
-        name: "David Smith",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "2 days ago",
@@ -70,7 +70,7 @@ export const articlespopular = [
       category: "Design",
       color: "bg-purple-500 text-blue-800",
       author: {
-        name: "Fatima Khalid",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "5 days ago",
@@ -84,7 +84,7 @@ export const articlespopular = [
       category: "JavaScript",
       color: "bg-green-100 text-green-800",
       author: {
-        name: "Alex Johnson",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "10 days ago",
@@ -98,7 +98,7 @@ export const articlespopular = [
       category: "React",
       color: "bg-blue-100 text-blue-800",
       author: {
-        name: "Maria Chen",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "7 days ago",
@@ -112,7 +112,7 @@ export const articlespopular = [
       category: "Full-Stack",
       color: "bg-red-100 text-red-800",
       author: {
-        name: "David Smith",
+        name: "Gammada show",
         avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
       },
       date: "2 days ago",
@@ -126,7 +126,7 @@ export const articlespopular = [
         category: "JavaScript",
         color: "bg-green-100 text-green-800",
         author: {
-          name: "Alex Johnson",
+          name: "Gammada show",
           avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
         },
         date: "10 days ago",
@@ -140,7 +140,7 @@ export const articlespopular = [
         category: "React",
         color: "bg-blue-100 text-blue-800",
         author: {
-          name: "Maria Chen",
+          name: "Gammada show",
           avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
         },
         date: "7 days ago",
@@ -154,7 +154,7 @@ export const articlespopular = [
         category: "Design",
         color: "bg-purple-500 text-blue-800",
         author: {
-          name: "Fatima Khalid",
+          name: "Gammada show",
           avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
         },
         date: "5 days ago",
@@ -168,7 +168,7 @@ export const articlespopular = [
         category: "JavaScript",
         color: "bg-green-100 text-green-800",
         author: {
-          name: "Alex Johnson",
+          name: "Gammada show",
           avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
         },
         date: "10 days ago",

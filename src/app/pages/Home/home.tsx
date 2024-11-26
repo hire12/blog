@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const HomeSection = () => {
   return (
-    <section className="bg-[#7C4EE4] h-screen flex flex-col lg:flex-row items-center text-white">
+    <section className="bg-[#7C4EE4] h-screen flex flex-col lg:flex-row items-center text-white subscribe-section">
       {/* Right Section: Image */}
       <div className="w-full lg:w-1/2 flex justify-center items-center px-5 mb-4 lg:mb-0">
         <div className="relative w-[1000.73px] h-[400.8px]">
@@ -18,9 +18,9 @@ const HomeSection = () => {
       </div>
 
       {/* Left Section: Text */}
-      <div className="w-full lg:w-1/2 px-8">
-        <h1 className="text-5xl font-bold mb-4">Welcome to My Blog</h1>
-        <p className="text-lg leading-relaxed py-4">
+      <div className="w-full lg:w-1/2 px-8 font-raleway">
+        <h1 className="text-5xl font-bold mb-4 font-raleway">Welcome to My Blog</h1>
+        <p className="text-lg leading-relaxed py-4 font-raleway">
           Discover engaging stories, insightful articles, and creative ideas.
           Join our community to explore the beauty of knowledge and inspiration!
         </p>

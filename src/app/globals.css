@@ -1,12 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
 
 
 body {
   background-color: #E2E2E2;
+  
 }
-
+body h1 {
+  font-family: sans-serif;
+}
 /* Home */
 
 
@@ -44,3 +48,14 @@ body {
 
 
 /* End Post  */
+
+
+
+/* In your external CSS file */
+.subscribe-section {
+  background-color: #7C4EE4;
+  background-image: url('/Vector.png'), url('/Vector.png');
+  background-position: top left, bottom right;
+  background-size: 30%, 30%;
+  background-repeat: no-repeat;
+}

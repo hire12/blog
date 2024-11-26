@@ -1,8 +1,9 @@
 import Post from "@/components/Post/Post";
-import Footer from "./pages/footer/footer";
+import Footer from "@/components/Footer/Footer";
 import Header from "./pages/header/page";
 import HomeSection from "./pages/Home/home";
 import Blog from "@/components/Blog/Blog";
+import Subscribe from "@/components/Subscribe/Subscribe";
 
 
 export default function Home() {
@@ -11,8 +12,9 @@ export default function Home() {
       <Header />
       <HomeSection />
       <Blog />
-      {/* <Footer /> */}
       <Post />
+      <Subscribe />
+      <Footer />
     </div>
   );
 }

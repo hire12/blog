@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+/* Global selection style */
+::selection {
+  background-color: rgba(124, 78, 228, 0.2); /* Light background */
+  color: #7C4EE4; /* Purple color when text is selected */
+}
+
+/* For dark mode (if needed) */
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: rgba(124, 78, 228, 0.3); /* Slightly darker background */
+    color: #7C4EE4; /* Purple color for dark mode */
+  }
+}
 
 
 body {

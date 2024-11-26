@@ -174,5 +174,19 @@ export const articlespopular = [
         date: "10 days ago",
         link: "#",
       },
+      {
+        id: 9,
+        title: "Introduction to Next.js",
+        description: "Learn the basics of building web apps with Next.js.",
+        image: "/photo2.jpg",
+        category: "JavaScript",
+        color: "bg-green-100 text-green-800",
+        author: {
+          name: "Gammada show",
+          avatar: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
+        },
+        date: "10 days ago",
+        link: "#",
+      },
   ];
   

@@ -66,7 +66,7 @@ export const articlespopular = [
       id: 1,
       title: "Mastering Tailwind CSS",
       description: "A guide to using Tailwind CSS for rapid UI development.",
-      image: "/photo3.jpg",
+      image: "/photo9.jpg",
       category: "Design",
       color: "bg-purple-500 text-blue-800",
       author: {
@@ -80,7 +80,7 @@ export const articlespopular = [
       id: 2,
       title: "Introduction to Next.js",
       description: "Learn the basics of building web apps with Next.js.",
-      image: "/photo2.jpg",
+      image: "/photo8.jpg",
       category: "JavaScript",
       color: "bg-green-100 text-green-800",
       author: {
@@ -94,7 +94,7 @@ export const articlespopular = [
       id: 3,
       title: "React State Management",
       description: "Manage complex state efficiently using modern React patterns.",
-      image: "/photo1.jpg",
+      image: "/photo7.jpg",
       category: "React",
       color: "bg-blue-100 text-blue-800",
       author: {
@@ -122,7 +122,7 @@ export const articlespopular = [
         id: 5,
         title: "Introduction to Next.js",
         description: "Learn the basics of building web apps with Next.js.",
-        image: "/photo2.jpg",
+        image: "/photo6.jpg",
         category: "JavaScript",
         color: "bg-green-100 text-green-800",
         author: {
@@ -136,7 +136,7 @@ export const articlespopular = [
         id: 6,
         title: "React State Management",
         description: "Manage complex state efficiently using modern React patterns.",
-        image: "/photo1.jpg",
+        image: "/photo5.jpg",
         category: "React",
         color: "bg-blue-100 text-blue-800",
         author: {
@@ -150,7 +150,7 @@ export const articlespopular = [
         id: 7,
         title: "Mastering Tailwind CSS",
         description: "A guide to using Tailwind CSS for rapid UI development.",
-        image: "/photo3.jpg",
+        image: "/photo4.jpg",
         category: "Design",
         color: "bg-purple-500 text-blue-800",
         author: {
@@ -164,7 +164,7 @@ export const articlespopular = [
         id: 8,
         title: "Introduction to Next.js",
         description: "Learn the basics of building web apps with Next.js.",
-        image: "/photo2.jpg",
+        image: "/photo3.jpg",
         category: "JavaScript",
         color: "bg-green-100 text-green-800",
         author: {

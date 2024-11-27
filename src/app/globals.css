@@ -72,3 +72,24 @@ body h1 {
   background-size: 30%, 30%;
   background-repeat: no-repeat;
 }
+
+/* .contact_container {
+  margin-bottom: 300px;
+}
+
+.contact_form {
+  top: 300px;
+} */
+
+.contact_container {
+  margin-bottom: 300px;
+  position: relative;
+}
+
+.contact_form {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

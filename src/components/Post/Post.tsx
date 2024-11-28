@@ -1,16 +1,17 @@
-'use client'
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import { articlespopular } from '@/data'; // Corrected the import here
+import Link from 'next/link'; // Import Link from next/link for navigation
 
 export default function Post() {
   return (
     <div className="blog_container">
       <div className="blog_row">
-        <section className=" py-8">
+        <section className="py-8">
           {/* Header Section */}
-          <div className="text-center pt-5 mb-12">          
+          <div className="text-center pt-5 mb-12">
             <h1 className="text-4xl font-semibold text-gray-900 mb-6">Popular Articles</h1>
             <p className="mx-auto mb-8 max-w-2xl font-light text-gray-700 md:mb-12 sm:text-xl">
               Stay up to date with the roadmap progress
@@ -43,7 +44,10 @@ export default function Post() {
                       <span className="text-sm">{article.date}</span>
                     </div>
                     <h2 className="mb-2 text-xl font-bold tracking-tight text-gray-900">
-                      <a href={article.link}>{article.title}</a>
+                      {/* Link to the dynamic article page */}
+                      <Link href={`/articles/${article.id}`}>
+                        {article.title}
+                      </Link>
                     </h2>
                     <p className="mb-5 font-light text-gray-500">{article.description}</p>
                     <div className="flex justify-between items-center">
@@ -55,21 +59,24 @@ export default function Post() {
                         />
                         <span className="font-medium">{article.author.name}</span>
                       </div>
-                      <a
-                        href={article.link}
+                      <Link
+                        href={`/pages/articles/${article.id}`} // Same link for "Read more"
                         className="inline-flex items-center font-medium text-blue-600 hover:underline"
                       >
                         Read more
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 ))}
             </div>
           </div>
           <div className='text-center py-3'>
-          <button className="text-center px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+
+            <Link href={'/pages/blog'}>
+            <button className="text-center px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
               Explore All
             </button>
+            </Link>
           </div>
         </section>
       </div>

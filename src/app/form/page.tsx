@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { SingleImageDropzone } from '@/components/single-image-dropzone'; // Your dropzone component
+// import { useRouter } from 'next/router';
 
 export default function CreateArticleForm() {
   const [title, setTitle] = useState('');
@@ -11,6 +12,10 @@ export default function CreateArticleForm() {
   const [image, setImage] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+
+  // const router = useRouter();
+
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -44,6 +49,10 @@ export default function CreateArticleForm() {
       setLink('');
       setImage(null);
       setError(null);
+
+
+      // router.push('/admin');
+
     } catch (err: any) {
       setError(err.message || 'Something went wrong.');
     }

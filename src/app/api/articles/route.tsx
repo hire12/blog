@@ -51,14 +51,93 @@ export async function POST(request: Request) {
 
 
 
+// export async function GET() {
+//   try {
+//     // Fetch all articles from the database
+//     const articles = await prisma.article.findMany();
+
+//     return NextResponse.json(articles);
+//   } catch (error) {
+//     console.error('Error fetching articles:', error);
+//     return NextResponse.json({ error: 'Failed to fetch articles' }, { status: 500 });
+//   }
+// }
+
+
+
+
 export async function GET() {
   try {
-    // Fetch all articles from the database
-    const articles = await prisma.article.findMany();
+    // Fetch all articles from the database and order them by the 'createdAt' field in descending order
+    const articles = await prisma.article.findMany({
+      orderBy: {
+        createdAt: 'desc', // Sort by createdAt in descending order
+      },
+    });
 
     return NextResponse.json(articles);
   } catch (error) {
     console.error('Error fetching articles:', error);
     return NextResponse.json({ error: 'Failed to fetch articles' }, { status: 500 });
+  }
+}
+
+
+
+
+
+
+
+
+// Add DELETE method to delete an article
+export async function DELETE(request: Request) {
+  try {
+    const url = new URL(request.url);
+    const id = url.searchParams.get('id');
+
+    if (!id) {
+      return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+    }
+
+    const article = await prisma.article.delete({
+      where: { id },
+    });
+
+    return NextResponse.json({ message: 'Article deleted successfully', article });
+  } catch (error) {
+    console.error('Error deleting article:', error);
+    return NextResponse.json({ error: 'Failed to delete article' }, { status: 500 });
+  }
+}
+
+// Add PUT method to edit/update an article
+export async function PUT(request: Request) {
+  try {
+    const contentType = request.headers.get('content-type');
+    if (!contentType?.includes('application/json')) {
+      return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });
+    }
+
+    const body = await request.json();
+    const { id, title, description, category, link } = body;
+
+    if (!id || !title || !description || !category || !link) {
+      return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
+    }
+
+    const updatedArticle = await prisma.article.update({
+      where: { id },
+      data: {
+        title,
+        description,
+        category,
+        link,
+      },
+    });
+
+    return NextResponse.json(updatedArticle);
+  } catch (error) {
+    console.error('Error updating article:', error);
+    return NextResponse.json({ error: 'Failed to update article' }, { status: 500 });
   }
 }

@@ -5,3 +5,11 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+
+
+// module.exports = {
+//   api: {
+//     bodyParser: false, // Disable the default body parser for file uploads
+//   },
+// };

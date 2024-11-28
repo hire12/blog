@@ -48,3 +48,59 @@ export async function GET(request: Request, { params }: { params: { id: string }
     return NextResponse.json({ error: 'Failed to fetch article' }, { status: 500 });
   }
 }
+
+
+
+
+
+// Add DELETE method to delete an article
+export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
+
+  if (!id) {
+    return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+  }
+
+  try {
+    const article = await prisma.article.delete({
+      where: { id },
+    });
+    return NextResponse.json({ message: 'Article deleted successfully', article });
+  } catch (error) {
+    console.error('Error deleting article:', error);
+    return NextResponse.json({ error: 'Failed to delete article' }, { status: 500 });
+  }
+}
+
+
+// Add PUT method to edit/update an article
+export async function PUT(request: Request) {
+  try {
+    const contentType = request.headers.get('content-type');
+    if (!contentType?.includes('application/json')) {
+      return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });
+    }
+
+    const body = await request.json();
+    const { id, title, description, category, link } = body;
+
+    if (!id || !title || !description || !category || !link) {
+      return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
+    }
+
+    const updatedArticle = await prisma.article.update({
+      where: { id },
+      data: {
+        title,
+        description,
+        category,
+        link,
+      },
+    });
+
+    return NextResponse.json(updatedArticle);
+  } catch (error) {
+    console.error('Error updating article:', error);
+    return NextResponse.json({ error: 'Failed to update article' }, { status: 500 });
+  }
+}

@@ -11,6 +11,7 @@ export default function page() {
     <div>
         <Header />
         <Blog />
+
         <YouTubePage />
         <Subscribe />
         <Footer />

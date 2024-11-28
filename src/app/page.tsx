@@ -5,6 +5,7 @@ import HomeSection from "./pages/Home/home";
 import Latest from "@/components/Latest/Latest";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import './globals.css'
+import UserArticle from "@/components/Read/Read";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <Header />
       <HomeSection />
       <Latest />
-      <Post />
+      {/* <Post /> */}
+      <UserArticle />
       <Subscribe />
       <Footer />
     </div>

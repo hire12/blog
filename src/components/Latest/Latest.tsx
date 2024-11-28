@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { articles } from '@/data';
+import classNames from 'classnames';
+import Link from 'next/link';
+
 
 export default function Latest() {
   return (
@@ -41,8 +44,9 @@ export default function Latest() {
                     <div className="flex-1 p-6 flex flex-col justify-between mb-12">
                       <div>
                         <div className="flex justify-between items-center mb-3 text-gray-500">
-                          <span
-                            className={`text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded ${article.color}`}
+                          <span                
+                        className={`${article.color}, text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded `}
+
                           >
                             {article.category}
                           </span>
@@ -62,12 +66,12 @@ export default function Latest() {
                           />
                           <span className="font-medium">{article.author.name}</span>
                         </div>
-                        <a
-                          href={article.link}
+                        <Link
+                          href={`/pages/blog/${article.id}`}
                           className="inline-flex items-center font-medium text-blue-600 hover:underline"
                         >
                           Read more
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </article>
@@ -110,12 +114,12 @@ export default function Latest() {
                         />
                         <span className="font-medium">{article.author.name}</span>
                       </div>
-                      <a
-                        href={article.link}
+                      <Link
+                        href={`/pages/blog/${article.id}`}
                         className="inline-flex items-center font-medium text-blue-600 hover:underline"
                       >
                         Read more
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 ))}
@@ -123,9 +127,11 @@ export default function Latest() {
           </div>
 
           <div className='text-center py-3'>
-          <button className="text-center px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+          <Link href={'/pages/blog'}>
+            <button className="text-center px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
               Explore All
             </button>
+            </Link>
           </div>
         </section>
       </div>

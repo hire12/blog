@@ -31,7 +31,7 @@ const HomeSection = () => {
         </p>
 
         <div className="py-6">
-          <Link href="/contact">
+          <Link href="/">
             <button className="bg-white text-black py-3 px-6 rounded-md hover:bg-opacity-90 text-sm lg:text-base">
               Read More
             </button>

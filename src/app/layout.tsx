@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { EdgeStoreProvider } from '@/lib/edgestore';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -30,29 +29,11 @@ export default function RootLayout({
       
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
- <EdgeStoreProvider> 
 
         {children}
-</EdgeStoreProvider> 
 
       </body>
     </html>
 
   );
 }
-
-
-
-// import { EdgeStoreProvider } from '@/lib/edgestore';
-
-// export default function RootLayout({ children }: { children: React.ReactNode }) {
-//   return (
-//     <html lang="en">
-//       <body>
-//         <EdgeStoreProvider>
-//           {children}
-//         </EdgeStoreProvider>
-//       </body>
-//     </html>
-//   );
-// }

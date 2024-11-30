@@ -9,9 +9,9 @@ const HomeSection = () => {
         <div className="relative w-[90%] h-[300px] lg:w-[1000.73px] lg:h-[400.8px]">
           <Image
             className="rounded-lg shadow-lg object-cover"
-            src="/Gammada.jpg" // Ensure this file is in the public folder
+            src="/Gammada.jpg" 
             alt="Illustration"
-            layout="fill" // This allows the image to fill the container
+            layout="fill" 
             priority
           />
         </div>

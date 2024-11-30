@@ -1,19 +1,3 @@
-// import AdminArticle from '@/components/Admin/Read'
-// import React from 'react'
-
-// export default function page() {
-//   return (
-//     <div>
-//       <AdminArticle />
-//     </div>
-//   )
-// }
-
-
-
-
-
-
 'use client';
 
 import CreateArticleForm from '@/app/form/page';
@@ -23,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
-export default function ReadArticlePage() { // Updated component name
+export default function ReadArticlePage() { 
   const router = useRouter();
 
   useEffect(() => {

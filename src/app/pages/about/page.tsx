@@ -15,10 +15,10 @@ export default function Page() {
             Welcome to our website! We are dedicated to delivering excellence in all that we do. 🛠️💻⌛
           </p>
           <Image
-            src="/photo6.jpg" // Replace with the actual path to your image
+            src="/photo6.jpg" 
             alt="About Us Illustration"
-            width={400} // Adjust dimensions as needed
-            height={300} // Adjust dimensions as needed
+            width={400} 
+            height={300}
             className="w-full max-w-md mx-auto rounded-lg shadow-lg"
           />
         </section>

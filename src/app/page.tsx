@@ -1,4 +1,3 @@
-import Post from "@/components/Post/Post";
 import Footer from "@/components/Footer/Footer";
 import Header from "./pages/header/page";
 import HomeSection from "./pages/Home/home";
@@ -13,7 +12,6 @@ export default function Home() {
       <Header />
       <HomeSection />
       <Latest />
-      {/* <Post /> */}
       <UserArticle />
       <Subscribe />
       <Footer />

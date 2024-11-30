@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@edgestore/react": "^0.2.2",
     "@edgestore/server": "^0.2.2",
     "@prisma/client": "^5.22.0",
     "axios": "^1.7.8",

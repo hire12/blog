@@ -1,14 +1,14 @@
-// import { clsx, type ClassValue } from "clsx"
-// import { twMerge } from "tailwind-merge"
+// // import { clsx, type ClassValue } from "clsx"
+// // import { twMerge } from "tailwind-merge"
 
-// export function cn(...inputs: ClassValue[]) {
-//   return twMerge(clsx(inputs))
-// }
+// // export function cn(...inputs: ClassValue[]) {
+// //   return twMerge(clsx(inputs))
+// // }
 
 
-// src/lib/db.ts
-import { PrismaClient } from '@prisma/client';
+// // src/lib/db.ts
+// import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
-export default prisma;
+// export default prisma;

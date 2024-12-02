@@ -12,7 +12,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center">
           <h1 className="text-4xl font-bold mb-4 text-blue-600">About Me</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Welcome to my world! I'm [Content Creator's Name], a passionate creator sharing content that inspires, educates, and entertains. 🎥💻🎶
+            Welcome to my world! I'm Gammadaa Show, a passionate Afan Oromo podcast creator who shares inspiring, educational, and entertaining content. 🎤📚🎶
           </p>
           <Image
             src="/photo6.jpg" 
@@ -27,7 +27,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center">
           <h2 className="text-3xl font-semibold text-gray-700 mb-4">My Journey</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            It all started back in [Year], when I first discovered my love for [topic or niche]. Since then, I’ve been creating content that connects with people all over the world.
+          My journey began when I realized the need for more Afan Oromo content in the podcasting space. Since then, I’ve been on a mission to create high-quality shows that engage and empower my audience.
           </p>
           <Image
             src="/photo10.png"
@@ -42,7 +42,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center bg-gray-200">
           <h2 className="text-3xl font-semibold text-gray-700 mb-4">What I Do</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            From video content to writing, my mission is to [provide value in some way, e.g., entertain, inform, etc.]. I create content that resonates with my audience, providing [educational videos, lifestyle content, music tutorials, etc.].
+            I produce and host podcasts that celebrate Oromo culture, explore current events, and feature discussions with notable guests from various fields. My goal is to inform, entertain, and inspire my listeners.
           </p>
           <Image
             src="/photo12.png"
@@ -57,7 +57,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center">
           <h2 className="text-3xl font-semibold text-gray-700 mb-4">Why Follow Me</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            By following me, you'll be part of a community of like-minded individuals who are passionate about [topic]. Together, we can [learn, share ideas, grow, etc.].
+            By following me, you'll join a growing community of listeners who appreciate meaningful conversations, cultural insights, and engaging storytelling in Afan Oromo. Together, we can celebrate and preserve our heritage.
           </p>
           <Image
             src="/photo11.png"
@@ -72,11 +72,10 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center bg-blue-600 text-white">
           <h2 className="text-3xl font-semibold mb-4">Stay Connected</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            Don’t miss out on my latest updates, tutorials, and exclusive content! Subscribe to my newsletter and join the community.
+            Don’t miss out on my latest podcasts, interviews, and updates. Subscribe to my newsletter and become a part of our vibrant community!
           </p>
           <Subscribe />
         </section>
-
       </main>
       <Footer />
     </>

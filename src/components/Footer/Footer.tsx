@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'; // Add social media icons
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from 'react-icons/fa'; // Add social media icons
 
 export default function Footer() {
   return (
@@ -7,24 +8,24 @@ export default function Footer() {
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Navigation Links */}
         <div className="mb-4">
-          <a href="/" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">Home</a>
-          <a href="/blog" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">Blog</a>
-          <a href="/about" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">About</a>
-          <a href="/contact" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">Contact Us</a>
+          <Link href="/" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">Home</Link>
+          <Link href="/pages/blog" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">Blog</Link>
+          <Link href="/pages/about" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">About</Link>
+          <Link href="/pages/contact" className="px-4 hover:underline hover:text-[#7C4EE4] transition-colors duration-300">Contact Us</Link>
         </div>
 
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-6 mt-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300 ">
+          <a href="facebook.com/Risaamedia2?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300 ">
             <FaFacebook size={24} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">
-            <FaTwitter size={24} />
+          <a href="https://tiktok.com/@gammeeol?_t=8rRXl1tElce&_r=1" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">
+            <FaTiktok size={24} />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">
+          <a href="https://www.youtube.com/@risaamedia1986" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">
             <FaYoutube size={24} />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">
+          <a href="https://www.instagram.com/gammadaao" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">
             <FaInstagram size={24} />
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#7C4EE4] hover:text-gray-300">

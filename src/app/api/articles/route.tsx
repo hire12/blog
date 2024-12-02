@@ -3,6 +3,11 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
+
+
+
+
+
 export async function POST(request: Request) {
   try {
     // Check if the content type is multipart/form-data
@@ -19,14 +24,24 @@ export async function POST(request: Request) {
     const description = formData.get('description');
     const category = formData.get('category');
     const link = formData.get('link');
-    const imageFile = formData.get('image') as Blob; // Assuming 'image' field
+    const imageFile = formData.get('image') as File; // Assuming 'image' field is a file
 
     if (!imageFile) {
       return NextResponse.json({ error: 'No image uploaded' }, { status: 400 });
     }
 
+    // Generate a new unique name for the image
+    const timestamp = Date.now();
+    const extension = path.extname(imageFile.name); // Extract file extension
+    const newImageName = `${timestamp}-${Math.random().toString(36).substring(2, 8)}${extension}`;
+
     // Save image locally (or upload to a cloud storage service)
-    const imagePath = path.join(process.cwd(), 'public/uploads', imageFile.name);
+    const uploadsDir = path.join(process.cwd(), 'public/uploads');
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
+    }
+
+    const imagePath = path.join(uploadsDir, newImageName);
     const imageBuffer = Buffer.from(await imageFile.arrayBuffer());
 
     fs.writeFileSync(imagePath, imageBuffer);
@@ -36,7 +51,7 @@ export async function POST(request: Request) {
       data: {
         title: title as string,
         description: description as string,
-        image: `/uploads/${imageFile.name}`, // Save image path
+        image: `/uploads/${newImageName}`, // Save the new image path
         category: category as string,
         link: link as string,
       },
@@ -48,8 +63,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Failed to create article' }, { status: 500 });
   }
 }
-
-
 
 
 

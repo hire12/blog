@@ -80,9 +80,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Add padding to top of the page content */}
-      <div className="pt-20"> {/* Adjust pt value according to header height */}
-        {/* Page content goes here */}
+      <div className="pt-20"> 
       </div>
     </>
   );

@@ -49,13 +49,6 @@ const ArticlePage = () => {
             {/* Article Text */}
             <div className="space-y-6 flex flex-col justify-between">
               <p className="text-lg text-gray-700">{article.description}</p>
-              {/* Add more paragraphs or content as needed */}
-              <p className="text-lg text-gray-700">
-                This article goes into detail about the topic. You can add multiple paragraphs for each article.
-              </p>
-              <p className="text-lg text-gray-700">
-                Tailwind CSS allows you to rapidly build custom designs without leaving your HTML. In this article, we will explore all the basics.
-              </p>
             </div>
           </div>
 

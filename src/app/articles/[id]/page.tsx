@@ -85,4 +85,4 @@ const ArticlePage = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default ArticlePage;  // Make sure to export this as default
+export default ArticlePage;  

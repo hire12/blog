@@ -123,9 +123,6 @@
 
 
 
-
-
-
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
@@ -137,10 +134,10 @@ type Params = {
 // DELETE method: Delete an article by ID
 export async function DELETE(
   request: Request,
-  context: { params: Params }
+  { params }: { params: Params }
 ) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     if (!id) {
       return NextResponse.json({ error: 'ID is required' }, { status: 400 });
@@ -160,10 +157,10 @@ export async function DELETE(
 // PUT method: Update an article
 export async function PUT(
   request: Request,
-  context: { params: Params }
+  { params }: { params: Params }
 ) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     const body = await request.json();
     const { title, description, category, link } = body;
@@ -192,10 +189,10 @@ export async function PUT(
 // GET method: Fetch an article by ID
 export async function GET(
   request: Request,
-  context: { params: Params }
+  { params }: { params: Params }
 ) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     const article = await prisma.article.findUnique({
       where: { id },

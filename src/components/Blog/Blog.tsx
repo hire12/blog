@@ -173,6 +173,7 @@ interface Article {
     name: string;
     avatar: string;
   };
+  isFeatured?: boolean;
 }
 
 const categoryColors = [

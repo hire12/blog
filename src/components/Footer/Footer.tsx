@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from 'react-icons/fa'; // Add social media icons
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from 'react-icons/fa'; // Add social media icons
 
 export default function Footer() {
   return (

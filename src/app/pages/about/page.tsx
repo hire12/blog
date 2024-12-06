@@ -12,7 +12,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center">
           <h1 className="text-4xl font-bold mb-4 text-blue-600">About Me</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Welcome to my world! I'm Gammadaa Show, a passionate Afan Oromo podcast creator who shares inspiring, educational, and entertaining content. 🎤📚🎶
+            Welcome to my world! I&#39;m Gammadaa Show, a passionate Afan Oromo podcast creator who shares inspiring, educational, and entertaining content. 🎤📚🎶
           </p>
           <Image
             src="/photo6.jpg" 
@@ -27,7 +27,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center">
           <h2 className="text-3xl font-semibold text-gray-700 mb-4">My Journey</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-          My journey began when I realized the need for more Afan Oromo content in the podcasting space. Since then, I’ve been on a mission to create high-quality shows that engage and empower my audience.
+            My journey began when I realized the need for more Afan Oromo content in the podcasting space. Since then, I&#39;ve been on a mission to create high-quality shows that engage and empower my audience.
           </p>
           <Image
             src="/photo10.png"
@@ -57,7 +57,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center">
           <h2 className="text-3xl font-semibold text-gray-700 mb-4">Why Follow Me</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            By following me, you'll join a growing community of listeners who appreciate meaningful conversations, cultural insights, and engaging storytelling in Afan Oromo. Together, we can celebrate and preserve our heritage.
+            By following me, you&#39;ll join a growing community of listeners who appreciate meaningful conversations, cultural insights, and engaging storytelling in Afan Oromo. Together, we can celebrate and preserve our heritage.
           </p>
           <Image
             src="/photo11.png"
@@ -72,7 +72,7 @@ export default function Page() {
         <section className="container mx-auto py-16 px-6 text-center bg-blue-600 text-white">
           <h2 className="text-3xl font-semibold mb-4">Stay Connected</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            Don’t miss out on my latest podcasts, interviews, and updates. Subscribe to my newsletter and become a part of our vibrant community!
+            Don&#39;t miss out on my latest podcasts, interviews, and updates. Subscribe to my newsletter and become a part of our vibrant community!
           </p>
           <Subscribe />
         </section>

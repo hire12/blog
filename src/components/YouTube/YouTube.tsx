@@ -34,14 +34,12 @@ export default function YouTubePage() {
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
-        // Fetch the latest videos from your YouTube channel using the search API
         const videoRes = await fetch(
           `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`
         );
         const videoData = await videoRes.json();
-
+  
         if (videoData.items && videoData.items.length > 0) {
-          // Fetch details for each video
           const videoDetailsPromises = videoData.items.map(async (item: { id: { videoId: string }; snippet: VideoSnippet }) => {
             const videoId = item.id.videoId;
             const videoRes = await fetch(
@@ -50,19 +48,25 @@ export default function YouTubePage() {
             const videoDetailData = await videoRes.json();
             return videoDetailData.items[0];
           });
-
+  
           const videos = await Promise.all(videoDetailsPromises);
           setVideoData(videos as Video[]);
         } else {
           setError('No videos found');
         }
-      } catch (err) {
-        setError('Failed to fetch video data');
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(`Failed to fetch video data: ${err.message}`);
+        } else {
+          setError('Failed to fetch video data');
+        }
+        console.error(err); // Optional logging
       }
     };
-
+  
     fetchVideoData();
-  }, []);
+  }, [apiKey, channelId, maxResults]); // Adding maxResults if needed
+  
 
   if (error) {
     return <div>{error}</div>;

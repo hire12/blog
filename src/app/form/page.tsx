@@ -39,17 +39,18 @@ export default function CreateArticleForm() {
     formData.append('link', link);
     formData.append('image', image);
 
+
     try {
       const response = await fetch('/api/articles', {
         method: 'POST',
         body: formData,
       });
-
+    
       if (!response.ok) {
         const { error } = await response.json();
         throw new Error(error || 'Failed to save article.');
       }
-
+    
       // Clear the form on success
       setTitle('');
       setDescription('');
@@ -57,17 +58,22 @@ export default function CreateArticleForm() {
       setLink('');
       setImage(null);
       setError(null);
-
+    
       // Show success toast and navigate
       toast.success('Article created successfully!');
       setTimeout(() => {
         router.push('/admin');
       }, 3000); // Redirect after 3 seconds
-
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong.');
-      toast.error(err.message || 'Something went wrong.');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+        toast.error(err.message);
+      } else {
+        setError('An unknown error occurred.');
+        toast.error('An unknown error occurred.');
+      }
     }
+    
   };
 
   return (

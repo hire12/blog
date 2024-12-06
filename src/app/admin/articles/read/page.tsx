@@ -1,6 +1,5 @@
 'use client';
 
-import CreateArticleForm from '@/app/form/page';
 import Header from '@/app/pages/header/page';
 import AdminArticle from '@/components/Admin/Read';
 import Link from 'next/link';

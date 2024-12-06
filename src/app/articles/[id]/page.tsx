@@ -6,16 +6,7 @@ import Footer from '@/components/Footer/Footer';
 import Subscribe from '@/components/Subscribe/Subscribe';
 import Link from 'next/link';
 
-interface Article {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  link: string;
-  createdAt: string;
-  updatedAt: string;
-}
+
 
 const ArticlePage = async ({ params }: { params: { id: string } }) => {
   // Fetch the article based on the dynamic route parameter

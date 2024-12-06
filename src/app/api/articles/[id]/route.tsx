@@ -108,22 +108,15 @@
 
 
 
-
-
-
-
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
-
-export async function GET(request: Request, { params }: Params) {
+export async function GET(
+  request: Request,
+  context: { params: { id: string } } // Fix the type here
+) {
   try {
-    const { id } = params;
+    const { id } = context.params; // Use context.params to extract the ID
 
     const article = await prisma.article.findUnique({
       where: { id },
@@ -140,15 +133,13 @@ export async function GET(request: Request, { params }: Params) {
   }
 }
 
-
 // DELETE method: Delete an article by ID
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(
+  request: Request,
+  context: { params: { id: string } } // Fix the type here
+) {
   try {
-    const { id } = params;
-
-    if (!id) {
-      return NextResponse.json({ error: 'ID is required' }, { status: 400 });
-    }
+    const { id } = context.params;
 
     const article = await prisma.article.delete({
       where: { id },
@@ -162,14 +153,12 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
 }
 
 // PUT method: Update an article
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(
+  request: Request,
+  context: { params: { id: string } } // Fix the type here
+) {
   try {
-    const { id } = params;
-
-    const contentType = request.headers.get('content-type');
-    if (!contentType?.includes('application/json')) {
-      return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });
-    }
+    const { id } = context.params;
 
     const body = await request.json();
     const { title, description, category, link } = body;

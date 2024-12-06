@@ -115,10 +115,15 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
-// GET method: Fetch an article by ID
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+type Params = {
+  params: {
+    id: string;
+  };
+};
+
+export async function GET(request: Request, { params }: Params) {
   try {
-    const { id } = params; // Access the dynamic route parameter `id`
+    const { id } = params;
 
     const article = await prisma.article.findUnique({
       where: { id },
@@ -134,6 +139,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
     return NextResponse.json({ error: 'Failed to fetch article' }, { status: 500 });
   }
 }
+
 
 // DELETE method: Delete an article by ID
 export async function DELETE(request: Request, { params }: { params: { id: string } }) {

@@ -114,15 +114,13 @@
 
 
 
-
-
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
 // GET method: Fetch an article by ID
-export async function GET(request: Request, context: { params: { id: string } }) {
+export async function GET(request: Request, { params }: { params: Record<string, string> }) {
   try {
-    const { id } = context.params; // Use context.params to access dynamic route parameters
+    const { id } = params; // Access the dynamic route parameter
 
     const article = await prisma.article.findUnique({
       where: { id },
@@ -140,9 +138,9 @@ export async function GET(request: Request, context: { params: { id: string } })
 }
 
 // DELETE method: Delete an article by ID
-export async function DELETE(request: Request, context: { params: { id: string } }) {
+export async function DELETE(request: Request, { params }: { params: Record<string, string> }) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     if (!id) {
       return NextResponse.json({ error: 'ID is required' }, { status: 400 });
@@ -160,9 +158,9 @@ export async function DELETE(request: Request, context: { params: { id: string }
 }
 
 // PUT method: Update an article
-export async function PUT(request: Request, context: { params: { id: string } }) {
+export async function PUT(request: Request, { params }: { params: Record<string, string> }) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     const contentType = request.headers.get('content-type');
     if (!contentType?.includes('application/json')) {

@@ -7,23 +7,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model article {
-  id          String   @id
+  id          String   @id @default(uuid()) // Automatically generate a UUID
   title       String
   description String
   image       String
   category    String
   link        String
   createdAt   DateTime @default(now())
-  updatedAt   DateTime
+  updatedAt   DateTime @updatedAt // Automatically update this field on each update
 
   @@map("article")
 }
 
 model user {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @default(autoincrement()) // Auto-increment for user ID
   name      String
   avatar    String
   createdAt DateTime @default(now())
-  updatedAt DateTime
+  updatedAt DateTime @updatedAt // Automatically update this field on each update
 }

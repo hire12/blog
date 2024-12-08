@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
@@ -64,63 +63,128 @@ import prisma from '@/lib/db';
 //   }
 // }
 
+// export async function POST(request: Request) {
+//   try {
+//     // Check if the content type is multipart/form-data
+//     const contentType = request.headers.get('content-type');
+//     if (!contentType?.includes('multipart/form-data')) {
+//       return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });
+//     }
+
+//     // Parse the form data manually using FormData (for multipart)
+//     const formData = await request.formData();
+
+//     // Extract fields
+//     const title = formData.get('title');
+//     const description = formData.get('description');
+//     const category = formData.get('category');
+//     const link = formData.get('link');
+//     const imageFile = formData.get('image') as File; // Assuming 'image' field is a file
+
+//     if (!imageFile) {
+//       return NextResponse.json({ error: 'No image uploaded' }, { status: 400 });
+//     }
+
+//     // Generate a new unique name for the image
+//     const timestamp = Date.now();
+//     const extension = path.extname(imageFile.name); // Extract file extension
+//     const newImageName = `${timestamp}-${Math.random().toString(36).substring(2, 8)}${extension}`;
+
+//     // Save image locally (or upload to a cloud storage service)
+//     const uploadsDir = path.join(process.cwd(), 'public/uploads');
+//     if (!fs.existsSync(uploadsDir)) {
+//       fs.mkdirSync(uploadsDir, { recursive: true });
+//     }
+
+//     const imagePath = path.join(uploadsDir, newImageName);
+//     const imageBuffer = Buffer.from(await imageFile.arrayBuffer());
+
+//     fs.writeFileSync(imagePath, imageBuffer);
+
+//     // Save the article in the database (you can store the relative image path)
+//     const article = await prisma.article.create({
+//       data: {
+//         title: title as string,
+//         description: description as string,
+//         image: `/uploads/${newImageName}`, // Save the new image path
+//         category: category as string,
+//         link: link as string,
+//         // No need to specify `id` and `updatedAt` as Prisma will manage them
+//       },
+//     });
+
+//     return NextResponse.json(article, { status: 201 });
+//   } catch (error) {
+//     console.error('Error creating article:', error);
+//     return NextResponse.json({ error: 'Failed to create article' }, { status: 500 });
+//   }
+// }
+
 export async function POST(request: Request) {
   try {
-    // Check if the content type is multipart/form-data
+    // Step 1: Check if the content type is multipart/form-data
     const contentType = request.headers.get('content-type');
     if (!contentType?.includes('multipart/form-data')) {
       return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });
     }
 
-    // Parse the form data manually using FormData (for multipart)
+    // Step 2: Parse the form data
     const formData = await request.formData();
-
-    // Extract fields
-    const title = formData.get('title');
-    const description = formData.get('description');
-    const category = formData.get('category');
-    const link = formData.get('link');
-    const imageFile = formData.get('image') as File; // Assuming 'image' field is a file
-
+    const imageFile = formData.get('image') as File;
     if (!imageFile) {
       return NextResponse.json({ error: 'No image uploaded' }, { status: 400 });
     }
 
-    // Generate a new unique name for the image
-    const timestamp = Date.now();
-    const extension = path.extname(imageFile.name); // Extract file extension
-    const newImageName = `${timestamp}-${Math.random().toString(36).substring(2, 8)}${extension}`;
+    // Step 3: Convert image to base64 for Imgur API
+    const base64Image = Buffer.from(await imageFile.arrayBuffer()).toString('base64');
 
-    // Save image locally (or upload to a cloud storage service)
-    const uploadsDir = path.join(process.cwd(), 'public/uploads');
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
+    // Step 4: Upload the image to Imgur
+    const imgurResponse = await fetch('https://api.imgur.com/3/image', {
+      method: 'POST',
+      headers: {
+        Authorization: `Client-ID 0e0fbeb7e474d5c`, // Replace with your Imgur Client-ID
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ image: base64Image }),
+    });
+
+    const imgurData = await imgurResponse.json();
+    console.log('Imgur Response:', imgurData);
+
+    if (!imgurData.success) {
+      throw new Error(`Imgur upload failed: ${imgurData.data.error}`);
     }
 
-    const imagePath = path.join(uploadsDir, newImageName);
-    const imageBuffer = Buffer.from(await imageFile.arrayBuffer());
+    const imgurImageUrl = imgurData.data.link; // Get the Imgur image URL
 
-    fs.writeFileSync(imagePath, imageBuffer);
-
-    // Save the article in the database (you can store the relative image path)
+    // Step 5: Save article data in the database
     const article = await prisma.article.create({
       data: {
-        title: title as string,
-        description: description as string,
-        image: `/uploads/${newImageName}`, // Save the new image path
-        category: category as string,
-        link: link as string,
-        // No need to specify `id` and `updatedAt` as Prisma will manage them
+        title: formData.get('title') as string,
+        description: formData.get('description') as string,
+        category: formData.get('category') as string,
+        link: formData.get('link') as string,
+        image: imgurImageUrl, // Use the Imgur image URL
       },
     });
 
+    console.log('Article Created:', article); // Log created article
     return NextResponse.json(article, { status: 201 });
   } catch (error) {
-    console.error('Error creating article:', error);
-    return NextResponse.json({ error: 'Failed to create article' }, { status: 500 });
+    console.error('Error:', error); // Log full error details
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : null;
+
+    return NextResponse.json(
+      {
+        error: 'Failed to create article',
+        details: errorMessage,
+        stack: errorStack,
+      },
+      { status: 500 }
+    );
   }
 }
-
 
 
 

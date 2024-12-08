@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@edgestore/server": "^0.2.2",
@@ -19,7 +20,7 @@
     "fs": "^0.0.1-security",
     "lucide-react": "^0.462.0",
     "mysql": "^2.18.1",
-    "mysql2": "^3.11.4",
+    "mysql2": "^3.11.5",
     "next": "^14.2.20",
     "next-auth": "^4.24.10",
     "path": "^0.12.7",

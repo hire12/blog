@@ -68,6 +68,23 @@ export async function POST(request: Request) {
 
 
 
+// export async function GET() {
+//   try {
+//     // Fetch all articles from the database and order them by the 'createdAt' field in descending order
+//     const articles = await prisma.article.findMany({
+//       orderBy: {
+//         createdAt: 'desc', // Sort by createdAt in descending order
+//       },
+//     });
+
+//     return NextResponse.json(articles);
+//   } catch (error) {
+//     console.error('Error fetching articles:', error);
+//     return NextResponse.json({ error: 'Failed to fetch articles' }, { status: 500 });
+//   }
+// }
+
+
 export async function GET() {
   try {
     // Fetch all articles from the database and order them by the 'createdAt' field in descending order
@@ -83,8 +100,6 @@ export async function GET() {
     return NextResponse.json({ error: 'Failed to fetch articles' }, { status: 500 });
   }
 }
-
-
 
 
 

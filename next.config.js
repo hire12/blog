@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ['surl.li'], // Allow images from surl.li
   },
+  // output: 'export',  // Enable static export
   // api: {
   //   bodyParser: false, // Disable the default body parser for file uploads
   // },

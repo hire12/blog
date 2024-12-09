@@ -203,7 +203,7 @@ export default function Latest() {
                         <div className="flex items-center space-x-4">
                           <Image
                             className="w-10 h-10 rounded-full"
-                            src={article.author.avatar}
+                            src='/photo6.jpg'
                             alt={`${article.author.name} avatar`}
                             width={40}
                             height={40}
@@ -253,7 +253,7 @@ export default function Latest() {
                       <div className="flex items-center space-x-4">
                         <Image
                           className="w-7 h-7 rounded-full"
-                          src={article.author.avatar}
+                          src='/photo6.jpg'
                           alt={`${article.author.name} avatar`}
                           width={28}
                           height={28}

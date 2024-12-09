@@ -289,7 +289,7 @@ export default function Blog() {
                         <div className="flex items-center space-x-4">
                         <Image
                           className="w-7 h-7 rounded-full"
-                          src="http://surl.li/rvbfmo"
+                          src="faris.jpg"
                           alt="Author's avatar" 
                           width={28} 
                           height={28}

@@ -8,7 +8,7 @@ export const articles = [
     color: "bg-purple-500 text-blue-800",
     author: {
       name: "Gammada show",
-      avatar: "http://surl.li/rvbfmo",
+      avatar: "",
     },
     date: "5 days ago",
     link: "#",
@@ -22,7 +22,7 @@ export const articles = [
     color: "bg-green-100 text-green-800",
     author: {
       name: "Gammada show",
-      avatar: "http://surl.li/rvbfmo",
+      avatar: "",
     },
     date: "10 days ago",
     link: "#",
@@ -36,7 +36,7 @@ export const articles = [
     color: "bg-blue-100 text-blue-800",
     author: {
       name: "Gammada show",
-      avatar: "http://surl.li/rvbfmo",
+      avatar: "",
     },
     date: "7 days ago",
     link: "#",
@@ -50,7 +50,7 @@ export const articles = [
     date: "1 day ago",
     author: {
       name: "Gammada Show",
-      avatar: "http://surl.li/rvbfmo",
+      avatar: "",
     },
     link: "#", 
     isFeatured: true,

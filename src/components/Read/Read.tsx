@@ -288,7 +288,7 @@ export default function UserArticle() {
                         <div className="flex items-center space-x-4">
                           <Image
                             className="w-7 h-7 rounded-full"
-                            src="http://surl.li/rvbfmo"
+                            src="/photo6.jpg"
                             alt={"avatar"}
                             width={28}
                             height={28}

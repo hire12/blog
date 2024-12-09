@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['i.imgur.com'], // Allow images from surl.li
+    domains: ['i.imgur.com', 'surl.li'], // Allow images from surl.li
   },
   // output: 'export',  // Enable static export
   // api: {

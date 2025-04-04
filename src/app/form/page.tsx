@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { SingleImageDropzone } from '@/components/single-image-dropzone'; // Your dropzone component
+import { SingleImageDropzone } from '@/components/single-image-dropzone';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,7 +11,7 @@ export default function CreateArticleForm() {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [link, setLink] = useState('');
-  const [image, setImage] = useState<File | undefined>(undefined); // Update to undefined
+  const [image, setImage] = useState<File | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();

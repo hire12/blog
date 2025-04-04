@@ -16,7 +16,7 @@ export default function LoginPage() {
     if (username === process.env.NEXT_PUBLIC_ADMIN_USERNAME && password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
       // Set a cookie
       document.cookie = `auth=true; path=/`;
-      localStorage.setItem('auth', 'true'); // Optional, for client-side checks
+      localStorage.setItem('auth', 'true'); 
       router.push('/admin');
     } else {
       setError('Invalid credentials.');

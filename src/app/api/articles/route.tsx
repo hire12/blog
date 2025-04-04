@@ -2,13 +2,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 
-
-
-
-
-
-
-
 export async function POST(request: Request) {
   try {
     // Step 1: Check if the content type is multipart/form-data
@@ -31,7 +24,7 @@ export async function POST(request: Request) {
     const imgurResponse = await fetch('https://api.imgur.com/3/image', {
       method: 'POST',
       headers: {
-        Authorization: `Client-ID 0e0fbeb7e474d5c`, // Replace with your Imgur Client-ID
+        Authorization: `Client-ID 0e0fbeb7e474d5c`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ image: base64Image }),
@@ -53,14 +46,14 @@ export async function POST(request: Request) {
         description: formData.get('description') as string,
         category: formData.get('category') as string,
         link: formData.get('link') as string,
-        image: imgurImageUrl, // Use the Imgur image URL
+        image: imgurImageUrl, 
       },
     });
 
-    console.log('Article Created:', article); // Log created article
+    console.log('Article Created:', article);
     return NextResponse.json(article, { status: 201 });
   } catch (error) {
-    console.error('Error:', error); // Log full error details
+    console.error('Error:', error);
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     const errorStack = error instanceof Error ? error.stack : null;
 

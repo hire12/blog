@@ -1,4 +1,4 @@
-# 🌟 Blog Website - Admin Panel & YouTube Integration 🌟
+## 🌟 Blog Website - Admin Panel & YouTube Integration 🌟
 
 Welcome to the **Blog Website**! This project provides a modern, sleek, and responsive blogging platform with a powerful **Admin Panel** to easily manage your articles and **YouTube video embedding** for richer content. It’s designed to make blogging and managing content effortless and secure.
 

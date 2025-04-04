@@ -60,7 +60,7 @@ Follow these steps to set up the project locally:
 1. **Clone the repository**
    Clone the project to your local machine using the following command:
    ```bash
-   git clone https://github.com/yourusername/your-blog.git
+   git clone https://github.com/hire12/blog.git
    cd your-blog
 
 2. **Install dependencies**
@@ -79,3 +79,10 @@ Follow these steps to set up the project locally:
    Start the project locally:
    ```bash
    npm run dev
+
+
+## 📜 License
+MIT © [Your Name] — Go build something epic!
+
+Made with ❤️ by [You]
+🐦 [[Twitter](https://www.linkedin.com/in/hiriyan-mohammed/)] · 💼 [[Portfolio](https://github.com/hire12)] · 📧 [[Email](hireemoh@gmail.com)]

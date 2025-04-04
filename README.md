@@ -82,7 +82,7 @@ Follow these steps to set up the project locally:
 
 
 ## 📜 License
-MIT © [Your Name] — Go build something epic!
+MIT © [Hiriyan] — Go build something epic!
 
-Made with ❤️ by [You]
-🐦 [[Twitter](https://www.linkedin.com/in/hiriyan-mohammed/)] · 💼 [[Portfolio](https://github.com/hire12)] · 📧 [[Email](hireemoh@gmail.com)]
+Made with ❤️ by [Hiriyan]
+🐦 [[Linkdein](https://www.linkedin.com/in/hiriyan-mohammed/)] · 💼 [[Portfolio](https://github.com/hire12)] · 📧 [[Email](hireemoh@gmail.com)]
